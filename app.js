@@ -2,7 +2,7 @@ var app = angular.module('app', ['ngRoute'])
 
 app.controller('testController', function($scope){
 
-	$scope.controller = 'testController';
+	$scope.resolve = "This is the template loaded only after the promise was resolved.";
 })
 
 
@@ -10,7 +10,7 @@ app.config(function($routeProvider){
 	$routeProvider
 		.when('/',
 		{
-			template: '<div>This is the template from {{controller}}</div>',
+			template: '<div> {{resolve}} <br/> Take a look at the code to see how it was done!</div>',
 			controller: 'testController',
 			resolve: {
 				homeView: function($q, $timeout){
@@ -22,6 +22,7 @@ app.config(function($routeProvider){
 					}, 3000);
 			
 					return deferobj.promise;
+
 				}
 			}
 
