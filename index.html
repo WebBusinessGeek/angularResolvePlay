@@ -13,17 +13,19 @@
     
   </head>
   <body>
-    <div class="container">
+    <div class="container" >
       
-      <h1>Hello, world!</h1>
+      <h1>Basic Resolve Play</h1>
 
-      <!-- angular functionality test -->
-      <input type="text" ng-model="name">{{name}}
+      <p>Template should load in 3 - 2 - 1 </p>
+      <ng-view></ng-view>
+
 
     </div>
 
    
     <script src="angular1.3-bootstrap3.2/angular.min.js"></script>
+     <script src="angular1.3-bootstrap3.2/angular-route.min.js"></script>
     <script src="app.js"></script>
 
   </body>
